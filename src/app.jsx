@@ -101,6 +101,38 @@ function App() {
       <TakeSection />
       <Colophon />
 
+      <a
+        href="newsletter-print.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: 'fixed',
+          bottom: 28,
+          right: 28,
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          padding: '10px 18px',
+          background: 'var(--um-red, #FF3534)',
+          color: '#fff',
+          fontFamily: 'var(--f-mono, sans-serif)',
+          fontSize: 12,
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          textDecoration: 'none',
+          borderRadius: 4,
+          boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
+          cursor: 'pointer',
+        }}
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1v8M4 6l3 3 3-3M2 10v1.5A1.5 1.5 0 003.5 13h7A1.5 1.5 0 0012 11.5V10" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        Export PDF
+      </a>
+
       {tweaksOn &&
       <div className="tweaks">
           <h5>Tweaks</h5>
