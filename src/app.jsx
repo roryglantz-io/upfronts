@@ -101,10 +101,9 @@ function App() {
       <TakeSection />
       <Colophon />
 
-      <a
-        href="newsletter-print.html"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        className="pdf-btn"
+        onClick={() => window.print()}
         style={{
           position: 'fixed',
           bottom: 28,
@@ -121,7 +120,7 @@ function App() {
           fontWeight: 700,
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
-          textDecoration: 'none',
+          border: 'none',
           borderRadius: 4,
           boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
           cursor: 'pointer',
@@ -131,7 +130,7 @@ function App() {
           <path d="M7 1v8M4 6l3 3 3-3M2 10v1.5A1.5 1.5 0 003.5 13h7A1.5 1.5 0 0012 11.5V10" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         Export PDF
-      </a>
+      </button>
 
       {tweaksOn &&
       <div className="tweaks">

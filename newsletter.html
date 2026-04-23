@@ -13,6 +13,63 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="styles.css?v=agentic2">
+<style>
+@media print {
+  @page { size: letter portrait; margin: 0; }
+  :root { --gutter: 24pt; --maxw: 100%; }
+  html, body { background: white !important; font-size: 10pt; }
+  .chrome, .tweaks, .pdf-btn { display: none !important; }
+  section, .toc, .cover, .thesis, .colophon { padding: 12pt 0 !important; min-height: auto !important; }
+  .section__inner, .thesis__inner, .chrome__inner, .colophon__grid, .colophon__bottom { padding: 0 !important; max-width: 100% !important; }
+  .cover__title { font-size: 72pt !important; line-height: 0.85 !important; margin: 16pt 0 0 !important; }
+  .cover__sub { font-size: 14pt !important; margin: 20pt 0 0 !important; }
+  .cover__bottom { margin-top: 24pt !important; padding-top: 14pt !important; gap: 12pt !important; }
+  .cover__meta { font-size: 8pt !important; line-height: 1.5 !important; }
+  .section__head { margin-bottom: 20pt !important; gap: 16pt !important; padding-bottom: 10pt !important; }
+  .section__num { font-size: 48pt !important; }
+  .section__title { font-size: 28pt !important; line-height: 1 !important; }
+  .section__lede { font-size: 12pt !important; margin-top: 10pt !important; }
+  .section__kicker { font-size: 8pt !important; }
+  .thesis__body { font-size: 22pt !important; line-height: 1.1 !important; }
+  .thesis__eyebrow { font-size: 8pt !important; margin-bottom: 18pt !important; }
+  .thesis__sig { margin-top: 24pt !important; padding-top: 12pt !important; font-size: 7pt !important; }
+  .toc__grid { grid-template-columns: 1fr 2fr !important; gap: 24pt !important; }
+  .toc__header h2 { font-size: 32pt !important; }
+  .toc__title { font-size: 13pt !important; }
+  .toc__desc { font-size: 10pt !important; }
+  .toc__item { padding: 8pt 0 !important; }
+  .stat__big { font-size: 36pt !important; line-height: 0.9 !important; }
+  .stat__big--small { font-size: 28pt !important; }
+  .stat__label { font-size: 9pt !important; margin-top: 6pt !important; }
+  .stat__source { font-size: 7pt !important; }
+  .stats-row { gap: 12pt !important; }
+  .pullquote { margin: 20pt 0 !important; padding: 16pt 0 !important; gap: 12pt !important; grid-template-columns: 32pt 1fr !important; }
+  .pullquote__mark { font-size: 52pt !important; }
+  .pullquote__body { font-size: 16pt !important; line-height: 1.2 !important; }
+  .prose { font-size: 10pt !important; max-width: 100% !important; }
+  .netcard__body { font-size: 10pt !important; }
+  .netcard { grid-template-columns: 120pt 1fr !important; gap: 16pt !important; padding: 16pt 0 !important; }
+  .netcard__name { font-size: 20pt !important; }
+  .netcard__tag { font-size: 11pt !important; margin-bottom: 10pt !important; }
+  .netcard__event { font-size: 7pt !important; padding: 6pt 0 !important; }
+  .sb__head, .sb__row { grid-template-columns: 90pt repeat(5, 1fr) 70pt !important; }
+  .sb__head > div, .sb__row > div { padding: 6pt 4pt !important; font-size: 8pt !important; }
+  .sb__network { font-size: 10pt !important; }
+  .cols-2 { grid-template-columns: 1fr 1fr !important; gap: 16pt !important; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr) !important; gap: 12pt !important; }
+  .split-3-2, .split-2-3 { gap: 16pt !important; }
+  .chart { padding: 12pt !important; }
+  .chart__title { font-size: 10pt !important; }
+  .chart__sub { font-size: 9pt !important; margin-bottom: 10pt !important; }
+  .take-card { padding: 12pt !important; }
+  .take-card__num { font-size: 36pt !important; }
+  .take-card__title { font-size: 14pt !important; margin: 8pt 0 6pt !important; }
+  .take-card__body { font-size: 9pt !important; }
+  .colophon { padding: 24pt 0 16pt !important; }
+  .colophon p { font-size: 9pt !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
 
 <style id="soft-mode-overrides">
 /* SOFT MODE — inlined so it's never stale-cached */
