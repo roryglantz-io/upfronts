@@ -16,19 +16,23 @@ const puppeteer = require('puppeteer');
   // Wait for React + fonts to fully render
   await new Promise(r => setTimeout(r, 4000));
 
-  // Hide the export button in the PDF
-  await page.addStyleTag({ content: '.pdf-btn { display: none !important; }' });
+  // Strip elements and styles that don't belong in print
+  await page.addStyleTag({
+    content: `
+      .pdf-btn, .chrome, .tweaks { display: none !important; }
+      .cover, section, .toc, .thesis, .colophon { min-height: 0 !important; }
+    `,
+  });
 
-  const height = await page.evaluate(() => document.documentElement.scrollHeight);
-
+  // scale: 0.63 fits a 1280px-wide layout onto letter paper (8.5in = ~816px)
   await page.pdf({
     path: 'newsletter.pdf',
-    width: '1280px',
-    height: `${height}px`,
+    format: 'Letter',
     printBackground: true,
+    scale: 0.63,
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   });
 
   await browser.close();
-  console.log(`Done — PDF is ${height}px tall`);
+  console.log('PDF generated successfully');
 })();
