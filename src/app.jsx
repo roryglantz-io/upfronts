@@ -101,10 +101,12 @@ function App() {
       <TakeSection />
       <Colophon />
 
-      <button
+      <a
         className="pdf-btn"
-        onClick={() => window.print()}
+        href="newsletter.pdf"
+        download
         style={{
+          textDecoration: 'none',
           position: 'fixed',
           bottom: 28,
           right: 28,
@@ -129,8 +131,8 @@ function App() {
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7 1v8M4 6l3 3 3-3M2 10v1.5A1.5 1.5 0 003.5 13h7A1.5 1.5 0 0012 11.5V10" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        Export PDF
-      </button>
+        Download PDF
+      </a>
 
       {tweaksOn &&
       <div className="tweaks">
