@@ -23,15 +23,12 @@ const puppeteer = require('puppeteer');
     `,
   });
 
-  // Pages are 1280px wide x 1657px tall — full newsletter width, letter proportions (8.5:11)
-  await page.pdf({
-    path: 'newsletter.pdf',
-    width: '1280px',
-    height: '1657px',
-    printBackground: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
+  await page.screenshot({
+    path: 'newsletter.png',
+    fullPage: true,
+    type: 'png',
   });
 
   await browser.close();
-  console.log('PDF generated successfully');
+  console.log('Screenshot generated successfully');
 })();
