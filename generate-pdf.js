@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -13,7 +14,6 @@ const puppeteer = require('puppeteer');
     timeout: 60000,
   });
 
-  // Wait for React + fonts to fully render
   await new Promise(r => setTimeout(r, 4000));
 
   await page.addStyleTag({
@@ -23,12 +23,28 @@ const puppeteer = require('puppeteer');
     `,
   });
 
-  await page.screenshot({
-    path: 'newsletter.png',
-    fullPage: true,
-    type: 'png',
-  });
+  // Get full page height then expand viewport so clips work correctly
+  const fullHeight = await page.evaluate(() => document.documentElement.scrollHeight);
+  await page.setViewport({ width: 1280, height: fullHeight });
+  await new Promise(r => setTimeout(r, 500));
+
+  // Letter proportions at 1280px wide: 1280 * (11/8.5) = 1657px per page
+  const pageHeight = 1657;
+  const totalPages = Math.ceil(fullHeight / pageHeight);
+
+  if (!fs.existsSync('pages')) fs.mkdirSync('pages');
+
+  for (let i = 0; i < totalPages; i++) {
+    const y = i * pageHeight;
+    const h = Math.min(pageHeight, fullHeight - y);
+    await page.screenshot({
+      path: `pages/page-${String(i + 1).padStart(2, '0')}.png`,
+      clip: { x: 0, y, width: 1280, height: h },
+      type: 'png',
+    });
+    console.log(`Page ${i + 1}/${totalPages}`);
+  }
 
   await browser.close();
-  console.log('Screenshot generated successfully');
+  console.log(`Done — ${totalPages} pages exported`);
 })();
