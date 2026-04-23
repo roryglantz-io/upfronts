@@ -16,17 +16,13 @@
 <style>
 /* ---------- PRINT OVERRIDES (this file only) ---------- */
 @media print {
-  @page { size: letter portrait; margin: 0.4in; }
-  :root { --gutter: 0px; --maxw: 100%; }
+  @page { size: letter portrait; margin: 0; }
+  :root { --gutter: 24pt; --maxw: 100%; }
   html, body { background: white !important; font-size: 10pt; }
-  .chrome, .tweaks { display: none !important; }
+  .chrome, .tweaks, .pdf-btn { display: none !important; }
 
-  /* Every top-level section fits on its own page */
   section, .toc, .cover, .thesis, .colophon {
     padding: 12pt 0 !important;
-    page-break-after: always;
-    break-after: page;
-    page-break-inside: avoid;
     min-height: auto !important;
   }
   .section__inner, .thesis__inner, .chrome__inner, .colophon__grid, .colophon__bottom {
