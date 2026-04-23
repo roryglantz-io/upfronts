@@ -103,6 +103,11 @@ function NetworkCard({ n, index }) {
         <ul>{n.highlights.map((h, i) => <li key={i}>{h}</li>)}</ul>
         <h4>Watch for</h4>
         <p style={{fontFamily: 'var(--f-serif)', fontStyle: 'italic'}}>{n.watch}</p>
+        {n.sources && (
+          <p style={{marginTop: 24, fontFamily: 'var(--f-mono)', fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', borderTop: '1px solid var(--paper-3)', paddingTop: 12}}>
+            Sources · {n.sources}
+          </p>
+        )}
       </div>
     </div>
   );
