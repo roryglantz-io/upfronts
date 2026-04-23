@@ -1,0 +1,74 @@
+Upfronts Newsletter Outline 
+Market Overview — Spend projections, upfront vs. scatter, key players 
+Streaming growth is actually faster than last year projected (+18.9% vs. +14%). Linear decline is slightly less severe than projected (-4.5% vs. -7%) but accelerating again in 2026.
+CTV &amp; Streaming — Ad-supported growth, share of upfront spend
+84% of U.S. households subscribed to at least one major streaming service by end of 2024
+45% of ad-supported video viewing now takes place on CTV (A18-49)
+In 2025, the average consumer uses 10.9 streaming services per month (paid + free) vs 8 in 2024.
+44% of consumers subscribe to at least one bundle (e.g., Disney+/Hulu/Max)
+Streaming's share of 18-49 video time: from just 2% in 2014 → 45% in 2024
+Streaming TV ad sales: +18.9% in 2025, projected +16.4% in 2026
+Streaming reached $12.9bn in ad sales in 2025 vs. Linear at $34.0bn — but the gap is closing fast
+Netflix and Amazon now account for ~30% of streaming ad sales — and growing fast. Netflix doubled its upfront commitments for 2025-26 
+Back in 2021, CTV was 1/5 of total upfront spending — now expected to be 1/2 of total upfront spend
+Streaming AVOD tiers carry only 3–8 minutes of ads per hour — a major differentiator for viewer experience
+Ad-Supported Growth 
+Willingness to watch ads in exchange for lower costs increased to 62% in 2025 (from 58% in 2024) (Kantar)
+Ad-supported streaming tiers have expanded significantly — the pricing gap between AVOD and SVOD continues to widen, pushing more viewers into ad-supported tiers
+78% of Peacock viewers and 73% of Prime Video viewers are on ad-supported tiers
+Linear TV &amp; Cable — Reach, viewership declines, cord-cutting trends
+Magna Data 
+Linear TV usage peaked at 31+ hours/week in 2008-2009 = now down to 6.5 hours/week in 2024 
+Linear TV weekly reach fell from 93% in 2011 --&gt; 68% in 2024 
+Cable network’s weekly reach dropped from 54% to 30% in the last five years 
+Median age of broadcast prime-time viewers is now over 65 
+Only 7% of adults say nearly all their TV/video watching is through traditional TV channels 
+Sales 
+Linear national TV ad sales: $36.8bn in 2024 (-2% YoY)
+Linear TV accounted for 13% of total U.S. ad spend in 2024 — surpassed by digital back in 2016
+Linear ad sales fell -4.5% in 2025 and are projected to fall another -5.9% in 2026
+In Q3 2025: Linear national TV was down -5.8%, with cable networks specifically down -5.8% and English broadcast down -10.5%
+Top linear TV spending verticals (2024): Finance (12%), Pharma (12%), Personal Care (11%) — together 35% of spend
+Cord-Cutting
+Traditional MVPD (cable/satellite) households are declining at 5–6 million per year
+Virtual MVPDs (YouTube TV, Hulu Live, etc.) are not growing fast enough to offset linear declines
+Approximately 75% of national TV ad dollars now come from upfront deals (up from 60% five years ago)
+Sports Rights (Kurt)
+FIFA World Cup:
+Finance/Betting: Sports betting and fantasy leagues expected to see outsized investment (16% of sports ad spend already) 
+Auto: Premium placements tied to lifestyle storytelling (heritage, performance, global reach) 
+Travel/Hospitality: Major opportunity for brands promoting North American travel, tourism experiences across the 16 host cities 
+Tech: Mobile, AR/VR experiences, and streaming-native brands 
+International Brands: Global CPG, luxury, and apparel seeking U.S. market entry
+Consumer Behavior (Dave)
+Audiences have become more difficult to reach with ad-free subscription options
+Preferences for authenticity have made UGC more dominant
+Shorter attention spans have shifted trends towards short-form vertical video
+Generational trends
+Shifts in consumer behavior reshaping opportunities for growth
+New players emerging in retail media
+Social commerce and genAI changing the ways consumer buy
+Economics &amp; Advertiser Sentiment (Dave)
+Tariffs hit advertising’s biggest players hard
+Retailers were under enormous pressure in 2025 but a significant recovery is expected in 2026 and into 2027 with digital ad spending accelerating by 14.2%
+Brands bet on innovation to combat price fatigue
+AI &amp; Technology (Collab)
+What the arrival of agentic AI means for the TV upfronts - Ad Age 
+Productizing of previous years AI agent tests with focus on flexibility 
+“Buyers and sellers agreed that agentic media tech won’t shape brand investment strategies. But it does factor into the overall decision-making process, especially as brands calculate the performance impact of every investment as outcomes-based measurement is prioritized.”
+“Buyers and sellers also maintained that agentic buying will not replace the need for upfront commitments nor the human relationships they rely on. ‘I think it will be similar to what happened when programmatic became a way that you can transact,” one seller said. “It didn’t make the upfronts less relevant; it made them more relevant. You now see programmatic terms that are agreed to in the upfront, and then they’re rolled out throughout the year. I think agentic buying will be very similar ... and those guidelines will be incredibly important.’”
+Primed For Upfronts; How Much AI Is Too Much AI? | AdExchanger
+Regulatory Environment (Beamz)
+Consolidation/Bundling
+Paramount acquisition of HBO after already acquiring Skydance
+FCC friendly to acquisitions- PwC’s recently published US Deals 2026 Outlook noted a major uptick in media and telecom transaction volume and value over the past six months “characterized by headline-grabbing megadeals, increased consolidation within streaming, and a pronounced shift toward profitability and scale — underscoring a renewed confidence among both strategic and financial buyers in deploying capital.”
+The FCC has shown flexibility by granting waivers to traditional ownership caps (e.g., Nexstar Media now exceeds the 39% cap, reaching 54.5% of U.S. TV households), reflecting the impact of digital competition and market consolidation.
+Data Privacy Regulation (CCPA, CPRA, State Laws) leading to focus on measurement solutions that are compliant with the updated laws
+Nearly 20 states now have comprehensive privacy statutes, requiring media companies to comply with a patchwork of state-specific rules.
+CCPA and CPRA amendments effective January 1, 2026, require:
+Formal risk assessments and cybersecurity audits.
+Prescriptive measures on automated decision-making technology.
+Clear consumer notifications at or before data collection, especially for sensitive or connected device data.
+Network/Platform Profiles — NBCU, Fox/Tubi, Amazon, Disney/ESPN, WBD/Max, Paramount/CBS, Telemundo, Apple (Rory)
+Competitive Landscape — ExxonMobil competitor spend by channel, category benchmarks (Rory)
+Marathon was one of the only spenders on Linear TV in 2025, with a heavy investment to prop up their “Rewarding Fans” message for College Football viewers. 

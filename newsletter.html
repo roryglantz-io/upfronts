@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Agentic Upfront — How 2026 Changes How We Buy · UM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="styles.css?v=agentic2">
+
+<style id="soft-mode-overrides">
+/* SOFT MODE — inlined so it's never stale-cached */
+body.soft {
+  /* UM brand palette — hero colors */
+  --um-red: #FF3534;          /* New Heritage Red */
+  --um-red-deep: #D11E1D;
+  --um-flamingo: #F585DA;     /* Flamingo */
+  --um-orchid: #806FEA;       /* Orchid (gradient partner) */
+  --um-river: #045195;        /* River (replaces Lake) */
+  --um-lake: #045195;         /* alias → River */
+  --um-mint: #045195;         /* Mint → repointed to River per brand direction */
+  --um-sunburst: #FFB84E;     /* Sunburst */
+  --um-turmeric: #CF5700;     /* Turmeric (deep orange) */
+  /* Brand gradients (top → bottom per UM guidelines) */
+  --um-grad-red: linear-gradient(180deg, #F585DA 0%, #FF3534 100%);      /* Flamingo → Heritage Red */
+  --um-grad-flamingo: linear-gradient(180deg, #806FEA 0%, #F585DA 100%); /* Orchid → Flamingo */
+  --um-grad-lake: linear-gradient(180deg, #045195 0%, #806FEA 100%);     /* River / Orchid */
+  --um-grad-mint: linear-gradient(180deg, #3197EE 0%, #045195 100%);     /* Sky-blue → River (replaces Mint→River) */
+  --um-grad-sunburst: linear-gradient(180deg, #FFB84E 0%, #045195 100%); /* Sunburst → River (replaces Sunburst→Mint) */
+  --um-grad-heritage: linear-gradient(180deg, #FF3534 0%, #FFB84E 100%); /* Red → Sunburst */
+  /* Page backgrounds — UM neutrals (Snow / Marble / Stone) */
+  --paper: #FFFFFF;           /* Snow */
+  --paper-2: #F6F5F5;         /* Marble */
+  --paper-3: #DEDBD6;         /* Stone */
+  --ink: #1D1A15;
+  --ink-2: #2A2520;
+  --f-display: 'Newsreader', 'Georgia', serif;
+  --f-mono: 'Archivo', 'Helvetica Neue', sans-serif;
+}
+body.soft { background: var(--paper-2); color: var(--ink); }
+/* Bump the weight and loosen tracking a bit on all the former-mono labels */
+body.soft .eyebrow,
+body.soft .section__kicker,
+body.soft .cover__meta > div,
+body.soft .cover__bottom-item .lbl,
+body.soft .toc__num,
+body.soft .toc__meta,
+body.soft .thesis__eyebrow,
+body.soft .stat__source,
+body.soft .chart__source,
+body.soft .chrome__title,
+body.soft .chrome__nav,
+body.soft .netcard__event,
+body.soft .colophon h4,
+body.soft .sb__head > div,
+body.soft .mono {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+body.soft .eyebrow,
+body.soft .section__kicker,
+body.soft .cover__meta > div,
+body.soft .thesis__eyebrow,
+body.soft .netcard__event,
+body.soft .colophon h4,
+body.soft .chrome__title,
+body.soft .chrome__nav { font-size: 12px; }
+body.soft .cover__meta { line-height: 1.9; }
+body.soft .cover__meta > div { letter-spacing: 0.1em; display: block; margin-bottom: 6px; }
+body.soft .cover__meta > div:last-child { margin-bottom: 0; }
+body.soft .stat__source,
+body.soft .chart__source,
+body.soft .cover__bottom-item .lbl,
+body.soft .sb__head > div { font-size: 11px; }
+body.soft h1.cover__title,
+body.soft .section__title,
+body.soft .cover__title,
+body.soft .thesis__body,
+body.soft h2, body.soft h3 {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: -0.015em;
+}
+body.soft .cover__title {
+  font-size: clamp(64px, 10vw, 140px);
+  line-height: 0.95;
+  font-weight: 400;
+}
+body.soft .cover__title .accent { font-style: italic; font-weight: 500; color: var(--um-red); }
+body.soft .section__title { font-size: 56px; line-height: 1.02; font-weight: 500; }
+body.soft .section__num {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 80px;
+  color: var(--um-red);
+  opacity: 0.55;
+}
+body.soft .section__kicker { font-size: 10px; letter-spacing: 0.2em; }
+body.soft .thesis { background: var(--paper); color: var(--ink); }
+body.soft .thesis__body { color: var(--ink); font-size: 38px; font-weight: 400; line-height: 1.25; }
+body.soft .thesis__body .em { color: var(--um-red); font-weight: 500; font-style: normal; }
+body.soft .thesis__eyebrow { color: var(--um-red); }
+body.soft .thesis__sig { color: var(--muted); border-top-color: var(--paper-3); }
+body.soft .sec--dark {
+  background: var(--paper-3);
+  color: var(--ink);
+}
+body.soft .sec--dark .section__head { border-bottom-color: var(--ink); }
+body.soft .sec--dark .section__num { color: var(--um-red); opacity: 0.55; }
+body.soft .sec--dark .eyebrow,
+body.soft .sec--dark .section__kicker { color: var(--um-red); }
+body.soft .sec--dark .section__title,
+body.soft .sec--dark .section__lede { color: var(--ink); }
+body.soft .sec--dark .chart { background: rgba(255,255,255,0.4); border-color: rgba(29,26,21,0.2); }
+body.soft .sec--dark .pullquote__body,
+body.soft .sec--dark .pullquote__cite { color: var(--ink); }
+body.soft .sec--red { background: var(--paper-2); color: var(--ink); }
+body.soft .sec--red .section__head { border-bottom-color: var(--ink); }
+body.soft .sec--red .section__num { color: var(--um-red); opacity: 0.55; }
+body.soft .sec--red .eyebrow,
+body.soft .sec--red .section__kicker { color: var(--um-red); }
+body.soft .sec--red .section__title,
+body.soft .sec--red .section__lede { color: var(--ink); }
+body.soft #action .section__inner > div > div > div > div[style*="opacity: 0.75"] {
+  color: var(--um-red) !important; opacity: 1 !important;
+}
+body.soft .pullquote__mark { color: var(--um-red); opacity: 0.35; font-size: 120px; }
+body.soft .pullquote__body { font-size: 26px; font-style: italic; }
+body.soft .pullquote { border-top-color: var(--um-red); }
+body.soft .stat__big { font-weight: 500; letter-spacing: -0.02em; }
+body.soft .stat__big--red { color: var(--um-red); }
+body.soft .chrome { background: rgba(255, 255, 255, 0.92); border-bottom-color: var(--paper-3); }
+body.soft .chrome__progress { background: var(--um-red); }
+/* ============================================================
+   PAGE BACKGROUNDS — Snow / Marble / Stone rotation.
+   Gradient-header sections sit on Snow for max pop.
+   ============================================================ */
+body.soft #cover,
+body.soft #thesis,
+body.soft #toc { background-color: var(--paper); }            /* Snow */
+body.soft #market { background-color: var(--paper-2); }       /* Marble */
+body.soft #ctv { background-color: var(--paper); }            /* Snow + Mint→Lake band */
+body.soft #linear { background-color: var(--paper-2); }       /* Marble + Flamingo→Red band */
+body.soft #sports { background-color: var(--paper); }         /* Snow + Red→Sunburst band */
+body.soft #calendar { background-color: var(--paper); }       /* Snow */
+body.soft #calendar .section__inner {
+  background-color: var(--paper-3);  /* Stone panel */
+  padding: 80px var(--gutter);
+  border-radius: 0;
+}
+body.soft #economics { background-color: var(--paper-2); }    /* Marble */
+body.soft #regulation { background-color: var(--paper); }     /* Snow + Orchid→Flamingo band */
+body.soft #scoreboard { background-color: var(--paper-3); }   /* Stone */
+body.soft #networks { background-color: var(--paper); }       /* Snow */
+body.soft #competitive { background-color: var(--paper-2); }  /* Marble */
+body.soft #action { background-color: var(--paper-3); }       /* Stone */
+body.soft #take { background-color: var(--paper); }           /* Snow */
+
+/* ============================================================
+   SECTION ACCENT RHYTHM — each major section gets a brand
+   gradient applied to its section__head (the headline block),
+   so the gradient always covers the headline exactly and never
+   bleeds or gets cut off regardless of wrap length.
+   ============================================================ */
+
+/* Gradient headlines — REMOVED. Section heads are now plain with
+   heritage red text for titles / kickers across all sections. */
+body.soft #ctv .section__head,
+body.soft #linear .section__head,
+body.soft #sports .section__head,
+body.soft #economics .section__head,
+body.soft #regulation .section__head {
+  background: transparent !important;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 64px;
+}
+/* Heritage red on all header text (applies in both default and soft) */
+body.soft .section__head .section__title,
+body.soft .section__head .section__num,
+body.soft .section__head .section__kicker,
+body.soft .section__head .eyebrow {
+  color: var(--um-red) !important;
+  opacity: 1 !important;
+}
+body.soft .section__head .section__lede {
+  color: var(--ink) !important;
+  opacity: 1 !important;
+}
+
+/* (Cream-on-gradient rules removed — headers now use heritage red on paper.) */
+
+/* Body content in gradient-header sections — flip cream → ink + swap red accents to
+   match each section's banner gradient so the whole section reads cohesively. */
+
+/* LINEAR — Flamingo→Red banner; body accents in Heritage Red */
+body.soft #linear .prose[style*="color: var(--paper)"],
+body.soft #linear p[style*="color: var(--paper)"],
+body.soft #linear [style*="color: var(--paper)"]:not([style*="background: var(--ink)"]) { color: var(--ink) !important; }
+body.soft #linear .prose strong { color: var(--um-red); }
+body.soft #linear [style*="color: var(--um-red)"]:not([style*="background: var(--ink)"] *) { color: var(--um-red) !important; }
+body.soft #linear [style*="background: var(--ink)"] { background: var(--ink) !important; color: #FFFFFF !important; }
+body.soft #linear [style*="background: var(--ink)"] [style*="color: var(--um-red)"] { color: var(--um-red) !important; }
+body.soft #linear .eyebrow-rule { color: var(--um-red); }
+body.soft #linear .eyebrow-rule span:first-child { background: var(--um-red) !important; }
+
+/* CTV — Mint→Lake banner; body accents in Mint */
+body.soft #ctv .prose strong { color: var(--um-mint); }
+body.soft #ctv [style*="color: var(--um-red)"]:not([style*="background: var(--ink)"] *) { color: var(--um-mint) !important; }
+body.soft #ctv [style*="background: var(--um-red)"] { background: var(--um-mint) !important; color: var(--ink) !important; }
+body.soft #ctv [style*="border-left: 2px solid var(--um-red)"] { border-left-color: var(--um-mint) !important; }
+body.soft #ctv [style*="border-bottom: 2px solid var(--um-red)"] { border-bottom-color: var(--um-mint) !important; }
+body.soft #ctv [style*="border-top: 4px solid var(--um-red)"] { border-top-color: var(--um-mint) !important; }
+body.soft #ctv .eyebrow-rule { color: var(--um-mint); }
+body.soft #ctv .eyebrow-rule span:first-child { background: var(--um-mint) !important; }
+
+/* SPORTS — Red→Sunburst banner; body keeps red primary, Sunburst as a lift */
+body.soft #sports .prose strong { color: var(--um-red); }
+/* No red→red swap needed — just tint any secondary chip via sunburst */
+body.soft #sports [style*="background: rgba(255,53,52"] { background: rgba(253,185,68,0.22) !important; color: var(--ink) !important; }
+
+/* ECONOMICS — banner stays Sunburst→River; body accents in River */
+body.soft #economics .prose strong { color: var(--um-river); }
+body.soft #economics [style*="color: var(--um-red)"]:not(.section__head *):not([style*="background: var(--ink)"] *) { color: var(--um-river) !important; }
+body.soft #economics [style*="background: var(--um-red)"] {
+  background: var(--um-river) !important;
+  color: #FFFFFF !important;
+}
+body.soft #economics [style*="border-left: 2px solid var(--um-red)"] { border-left-color: var(--um-river) !important; }
+body.soft #economics [style*="border-bottom: 2px solid var(--um-red)"] { border-bottom-color: var(--um-river) !important; }
+body.soft #economics [style*="border-top: 4px solid var(--um-red)"] { border-top-color: var(--um-river) !important; }
+body.soft #economics .eyebrow-rule { color: var(--um-river); }
+body.soft #economics .eyebrow-rule span:first-child { background: var(--um-river) !important; }
+
+/* REGULATION — Orchid→Flamingo banner; body accents in Heritage Red */
+body.soft #regulation .prose strong { color: var(--um-red); }
+body.soft #regulation [style*="color: var(--um-red)"]:not(.section__head *):not([style*="background: var(--ink)"] *) { color: var(--um-red) !important; }
+body.soft #regulation [style*="background: var(--um-red)"] {
+  background: var(--um-red) !important;
+  color: #FFFFFF !important;
+}
+/* Regulation M&A callout stays Heritage Red + white text (same as body accent now) */
+body.soft #regulation [style*="background: var(--um-red)"][style*="padding: 32px"] * { color: #FFFFFF !important; }
+body.soft #regulation [style*="border-left: 2px solid var(--um-red)"] { border-left-color: var(--um-red) !important; }
+body.soft #regulation [style*="border-bottom: 2px solid var(--um-red)"] { border-bottom-color: var(--um-red) !important; }
+body.soft #regulation [style*="border-top: 4px solid var(--um-red)"] { border-top-color: var(--um-red) !important; }
+body.soft #regulation .eyebrow-rule { color: var(--um-red); }
+body.soft #regulation .eyebrow-rule span:first-child { background: var(--um-red) !important; }
+
+/* AGENTIC — Stone with Lake accents (quieter, still airy) */
+body.soft #agentic {
+  background: var(--paper-3);  /* Stone */
+  color: var(--ink);
+}
+body.soft #agentic .section__title,
+body.soft #agentic .section__lede { color: var(--ink); }
+body.soft #agentic .eyebrow,
+body.soft #agentic .section__kicker { color: var(--um-lake); opacity: 1; }
+body.soft #agentic .section__num { color: var(--um-lake); opacity: 0.85; }
+body.soft #agentic .section__head { border-bottom-color: rgba(29,26,21,0.2); }
+body.soft #agentic [style*="color: var(--paper)"],
+body.soft #agentic [style*="color: var(--paper-2)"] { color: var(--ink) !important; }
+body.soft #agentic [style*="color: var(--muted)"] { color: rgba(29,26,21,0.62) !important; }
+body.soft #agentic [style*="border: 2px solid var(--paper)"] { border-color: var(--um-lake) !important; }
+body.soft #agentic [style*="border-top: 2px solid var(--paper)"] { border-top-color: var(--um-lake) !important; }
+body.soft #agentic [style*="border-bottom: 2px solid var(--paper)"] { border-bottom-color: var(--um-lake) !important; }
+body.soft #agentic [style*="border-right: 1px solid rgba(255,255,255"],
+body.soft #agentic [style*="border-bottom: 1px solid rgba(255,255,255"] { border-color: rgba(29,26,21,0.15) !important; }
+body.soft #agentic [style*="background: var(--um-red)"] {
+  background: var(--um-lake) !important;
+  color: #FFFFFF !important;
+}
+body.soft #agentic .pullquote__mark,
+body.soft #agentic .pullquote__body em,
+body.soft #agentic [style*="color: var(--um-red)"] { color: var(--um-lake) !important; }
+
+/* CALENDAR — bucket labels, event names, note borders — all back to black ink.
+   (The red accents read as "error" on this neutral section.) */
+body.soft #calendar [style*="color: var(--um-red)"] { color: var(--ink) !important; }
+body.soft #calendar [style*="border-bottom: 2px solid var(--um-red)"] { border-bottom-color: var(--ink) !important; }
+body.soft #calendar [style*="border-left: 2px solid var(--um-red)"] { border-left-color: var(--ink) !important; }
+
+/* ACTION — now on Stone (paper-3); cream inline text → ink */
+body.soft #action [style*="color: var(--paper)"] { color: var(--ink) !important; }
+body.soft #action [style*="border-top: 2px solid var(--paper)"] { border-top-color: var(--ink) !important; }
+body.soft #action [style*="border-bottom: 2px solid var(--paper)"] { border-bottom-color: var(--ink) !important; }
+body.soft #action [style*="border-top: 1px solid rgba(255,255,255"] { border-top-color: rgba(29,26,21,0.18) !important; }
+body.soft #action .section__title,
+body.soft #action .section__lede { color: var(--ink) !important; }
+body.soft #action .section__num { color: var(--um-red) !important; opacity: 0.55 !important; }
+body.soft #action .eyebrow,
+body.soft #action .section__kicker { color: var(--um-red) !important; }
+
+/* TAKE — now on Snow; inline cream labels need to flip to ink/red so they're visible */
+body.soft #take [style*="color: var(--paper)"]:not([style*="background: var(--ink)"] *) {
+  color: var(--um-red) !important;
+}
+body.soft #take .take-card[style*="color: var(--paper)"] {
+  color: var(--ink) !important;
+  background: var(--paper-2) !important;
+  border: 1px solid var(--paper-3);
+}
+body.soft #take .take-card__num[style*="color: var(--paper)"] { color: var(--um-red) !important; }
+/* Keep the inner predictions block (black background) readable */
+body.soft #take [style*="background: var(--ink)"] { color: #FFFFFF !important; }
+body.soft #take [style*="background: var(--ink)"] [style*="color: var(--paper)"] { color: #FFFFFF !important; }
+body.soft #take .section__title,
+body.soft #take .section__lede,
+body.soft #take .section__num { color: var(--ink) !important; }
+body.soft #take .section__num { color: var(--um-red) !important; opacity: 0.55; }
+body.soft #take .eyebrow,
+body.soft #take .section__kicker { color: var(--um-red) !important; }
+
+/* Section-num + kicker color rhythm for remaining paper sections */
+body.soft #market .section__num { color: var(--um-red); opacity: 0.55; }
+body.soft #market .eyebrow,
+body.soft #market .section__kicker { color: var(--um-red); }
+
+body.soft #economics .section__num { color: var(--um-mint); opacity: 0.85; }
+body.soft #economics .eyebrow,
+body.soft #economics .section__kicker { color: var(--um-mint); }
+
+body.soft #scoreboard .section__num { color: var(--um-lake); opacity: 0.85; }
+body.soft #scoreboard .eyebrow,
+body.soft #scoreboard .section__kicker { color: var(--um-lake); }
+
+body.soft #networks .section__num { color: var(--um-red); opacity: 0.55; }
+body.soft #networks .eyebrow,
+body.soft #networks .section__kicker { color: var(--um-red); }
+
+body.soft #competitive .section__num { color: var(--um-flamingo); opacity: 0.9; }
+body.soft #competitive .eyebrow,
+body.soft #competitive .section__kicker { color: var(--um-flamingo); }
+
+/* CALENDAR — lake bucket labels */
+body.soft #calendar [style*="color: var(--um-red)"][style*="border-bottom"] {
+  color: var(--um-lake) !important;
+  border-bottom-color: var(--um-lake) !important;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel" src="src/components.jsx"></script>
+<script type="text/babel" src="src/charts.jsx"></script>
+<script type="text/babel" src="src/sections-open.jsx"></script>
+<script type="text/babel" src="src/sections-market.jsx"></script>
+<script type="text/babel" src="src/sections-forces.jsx"></script>
+<script type="text/babel" src="src/sections-agentic.jsx"></script>
+<script type="text/babel" src="src/sections-networks.jsx"></script>
+<script type="text/babel" src="src/sections-close.jsx"></script>
+<script type="text/babel" src="src/app.jsx"></script>
+</body>
+</html>
