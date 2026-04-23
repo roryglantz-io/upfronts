@@ -1,4 +1,3 @@
-// letter size, scale 0.63, no min-height
 const puppeteer = require('puppeteer');
 
 (async () => {
@@ -17,7 +16,6 @@ const puppeteer = require('puppeteer');
   // Wait for React + fonts to fully render
   await new Promise(r => setTimeout(r, 4000));
 
-  // Strip elements and styles that don't belong in print
   await page.addStyleTag({
     content: `
       .pdf-btn, .chrome, .tweaks { display: none !important; }
@@ -25,12 +23,12 @@ const puppeteer = require('puppeteer');
     `,
   });
 
-  // scale: 0.63 fits a 1280px-wide layout onto letter paper (8.5in = ~816px)
+  // Pages are 1280px wide x 1657px tall — full newsletter width, letter proportions (8.5:11)
   await page.pdf({
     path: 'newsletter.pdf',
-    format: 'Letter',
+    width: '1280px',
+    height: '1657px',
     printBackground: true,
-    scale: 0.63,
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   });
 
