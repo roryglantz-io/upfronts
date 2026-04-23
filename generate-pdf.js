@@ -1,3 +1,4 @@
+// letter size, scale 0.63, no min-height
 const puppeteer = require('puppeteer');
 
 (async () => {
